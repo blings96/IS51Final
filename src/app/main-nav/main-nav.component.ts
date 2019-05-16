@@ -14,4 +14,14 @@ export class MainNavComponent implements OnInit {
   ngOnInit() {
   }
 
+  showAbout() {
+    this.toastService.showToast('success', 5000, 'This application was created by Boris Billings (c).');
+  }
+
+  logout() {
+    localStorage.clear();
+    localStorage.setItem('user', JSON.stringify({}));
+    this.router.navigate(['login']);
+  }
+
 }
